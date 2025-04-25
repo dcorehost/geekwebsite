@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Address</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #1d60aa;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    header h2 {
+      font-size: 18px;
+      color: white;
+    }
+    
+    header .buttons a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      border: 1px solid white;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    /* Main Content */
+    .main-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 40px;
+      width: 100%;
+      max-width: 650px;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #1d60aa; /* was #00796b */
+      box-shadow: 0 0 0 3px rgba(56, 163, 165, 0.2); /* updated RGB */
+      outline: none;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+      min-width: 45%;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #1d60aa; /* was #00796b */
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2c7d7e; /* was #004d40 */
+    }
+
+    #responseMessage {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 30px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+    }
+
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffc107;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Customer Service & Support</h2>
+    <div class="buttons">
+      <a href="login.html">Login</a>
+      <a href="#">Book Appointment</a>
+    </div>
+  </header>
+
+  <!-- Main Form Section -->
+  <div class="main-container">
+    <div class="form-container">
+      <form id="addressForm">
+        <h2>Submit Your Address</h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="first_name" placeholder="First Name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="last_name" placeholder="Last Name" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Full Address</label>
+          <textarea id="address" name="full_address" rows="4" required placeholder="Complete address with area, street, and nearby landmark."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" placeholder="e.g., Maharashtra" required />
+          </div>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="e.g., Mumbai" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="street">Street / Landmark</label>
+            <input type="text" id="street" name="landmark" placeholder="Street or landmark" required />
+          </div>
+
+          <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" name="pincode" placeholder="6-digit pincode" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" placeholder="10-digit number" required />
+        </div>
+
+        <button type="submit">Submit</button>
+        <p id="responseMessage"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h3>Geek Care</h3>
+    <ul class="footer-links">
+      <li><a href="about-us.html">About us</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+      <li><a href="refund-policy.html">Refund Policy</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+    <div class="copyright">
+      Copyrights © 2024 Geek Care. All Rights Reserved
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('addressForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+      const responseBox = document.getElementById('responseMessage');
+      responseBox.textContent = 'Submitting...';
+      responseBox.style.color = '#333';
+
+      const formObject = {};
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+
+      try {
+        const res = await fetch('http://localhost:8000/address.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formObject),
+        });
+
+        const data = await res.json();
+        responseBox.textContent = data.message || 'Submitted successfully!';
+        responseBox.style.color = 'green';
+
+        if (data.success) {
+
+          const firstName = document.getElementById('firstName').value;
+          const lastName = document.getElementById('lastName').value;
+          const fullName = `${firstName} ${lastName}`;
+          localStorage.setItem('username', fullName);
+          
+          window.location.href = 'component.html';
+        }
+      } catch (error) {
+        responseBox.textContent = 'Submission failed. Please try again.';
+        responseBox.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>

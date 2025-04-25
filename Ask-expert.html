@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask an Expert | Geek Care</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1d60aa;
+      color: white;
+
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffc107;
+    }
+
+    .hero {
+      background-color: #e9f2ff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #1d60aa;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+      
+        .expert-header {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: -50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .expert-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .expert-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .contact-number {
+            display: inline-block;
+            background: white;
+            color: #3b82f6;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: 20px;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+  
+        .expert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        .expert-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .expert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .expert-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .expert-img {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .expert-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .expert-card:hover .expert-img img {
+            transform: scale(1.05);
+        }
+        
+        .expert-info {
+            padding: 25px;
+        }
+        
+        .expert-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: #1e293b;
+        }
+        
+        .expert-title {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .expert-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .specialty-tag {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .expert-cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .expert-availability {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        
+        .available {
+            color: #10b981;
+            font-weight: 600;
+        }
+        
+        .contact-btn {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 80px 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .expert-header {
+                padding: 60px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            }
+            
+            .expert-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .stats-section {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 30px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffc107;
+    }
+
+    .copyright {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        margin-top: 15px;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+
+      .experts-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Customer Service Support</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bookAppointment.html">Ask an Expert</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Contact An Experts</h1>
+    <p>Get professional advice from our team of certified experts. Whether you need technical support, troubleshooting, or professional consultation, we're here to help.</p>
+   
+      <div class="contact-number">contact-us: +1 (808)7676060</div>
+  </section>
+
+  <body>    
+    <!-- Expert Grid -->
+    <div class="container">
+        <div class="expert-grid">
+            <!-- Expert 1 -->
+            <div class="expert-card">
+                <div class="expert-badge">Available Now</div>
+                <div class="expert-img">
+                    <img src="images/exp2.jpg" alt="Sarah Johnson">
+                </div>
+                <div class="expert-info">
+                    <h3>Sarah Johnson</h3>
+                    <span class="expert-title">Senior Technical Consultant</span>
+                    
+                    <div class="expert-cta">
+                        <span class="expert-availability"><span class="available">Online</span> • Responds in 2h</span>
+                        <a href="contact.html" class="contact-btn">contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Expert 2 -->
+            <div class="expert-card">
+                <div class="expert-badge">Available Now</div>
+                <div class="expert-img">
+                    <img src="images/exp3.jpg" alt="Michael Chen">
+                </div>
+                <div class="expert-info">
+                    <h3>Michael Chen</h3>
+                    <span class="expert-title">Customer Success Manager</span>
+                    
+                   
+                    
+                    <div class="expert-cta">
+                        <span class="expert-availability"><span class="available">Online</span> • Responds in 1h</span>
+                        <a href="contact.html" class="contact-btn">Contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Expert 3 -->
+            <div class="expert-card">
+                <div class="expert-img">
+                    <img src="images/exp1.jpg" alt="Emily Rodriguez">
+                </div>
+                <div class="expert-info">
+                    <h3>Emily Rodriguez</h3>
+                    <span class="expert-title">Product Specialist</span>
+                  
+                    <div class="expert-cta">
+                        <span class="expert-availability">Available tomorrow</span>
+                        <a href="schedule.html" class="contact-btn"> Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Stats Section -->
+    <div class="container">
+        <div class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Availability</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Customer Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15min</div>
+                <div class="stat-label">Average Response Time</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Certified Experts</div>
+            </div>
+        </div>
+    </div>
+   </form>
+    </section>
+  </div>
+
+  <footer>
+    <h3>Geek Care</h3>
+    <ul class="footer-links">
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="Terms & condition.html">Terms & Conditions</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+    <p class="copyright">© 2024 Geek Care. All rights reserved.</p>
+  </footer>
+</body>
+</html>

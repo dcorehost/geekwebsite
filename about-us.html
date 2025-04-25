@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About us - Geek Cares</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+    
+    header {
+      background-color: #1d60aa;
+      color: white;
+      padding: 30px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    header h2 {
+      font-size: 18px;
+      color: white;
+    }
+    
+    header .buttons a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      border: 1px solid white;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    header .buttons a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .about {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .text-section {
+      flex: 1;
+    }
+
+    .text-section h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .text-section h3 a {
+      font-size: 18px;
+      text-decoration: underline;
+      color: #333;
+    }
+
+    .text-section ul {
+      margin-top: 15px;
+      padding-left: 20px;
+      line-height: 1.8;
+      list-style-type: disc;
+    }
+
+    .image-section {
+      flex: 1;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 20px;
+    }
+
+    .process-list {
+      max-width: 700px;
+      margin: 0 auto 60px auto;
+      padding-left: 20px;
+      line-height: 1.8;
+      list-style-type: disc;
+    }
+
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-container h3 {
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .chat-box {
+      position: fixed;
+      bottom: 10px;
+      right: 1px;
+      width: 300px;
+      font-family: Arial, sans-serif;
+      padding: 30px; 
+    }
+
+    .chat-icon {
+      width: auto;
+      height: 100px;
+      border-radius:auto;
+      padding-bottom: 10px 20px;
+      border-radius: 8px;
+      
+    }
+    
+    .chat-status{
+      position: relative;
+      background-color: #f6f2f2;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      display: inline-block;
+      margin-top: 5px;
+      float:  right;
+    }
+
+    .notification-dot {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: red;
+      color: rgb(249, 246, 246);
+      border-radius: 60%;
+      font-size: 12px;
+      width: 15px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-btn {
+      font-size: 18px;
+      cursor: pointer;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <h2>Customer Service & Support</h2>
+    <div class="buttons">
+      <a href="login.html">Login</a>
+      <a href="bookAppointment.html">Book Appointment</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="about">
+      <div class="text-section">
+        <h2>About Geek Service Appointment</h2>
+        <h3><a href="#">Why Choose Geek Service Cares</a></h3>
+        <ul>
+          <li>Expert Technicians with extensive Knowledge in Various Tech Domains</li>
+          <li>Convenient online Appointment scheduling System</li>
+          <li>Personalized Solutions tailored to your specific Needs</li>
+          <li>Transparent Pricing And no Hidden Fees</li>
+          <li>Commitment to Customer Satisfaction And Ongoing Support.</li>
+        </ul>
+      </div>
+      <div class="image-section">
+        <img src="images/about-us-banner.webp" alt="Technician working" />
+      </div>
+    </section>
+
+    <h2 class="section-title">Our Geek Service Appointment Process</h2>
+    <ul class="process-list">
+      <li>Schedule your Appointment Online Via phone</li>
+      <li>Describe Your tech Issue or Service Need</li>
+      <li>Get Matched With a Qualified Geek Care Service Technician</li>
+      <li>Receive expert Assistance at your Preferred time And locations</li>
+      <li>Enjoy your fully functional and Optimized tech setup.</li>
+    </ul>
+  </div>
+   <footer>
+    <div class="footer-container">
+      <h3>Geek Care</h3>
+      <ul class="footer-links">
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="Terms & condition.html">Terms & Conditions</a></li>
+        <li><a href="Refund-policy.html">Refund Policy</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+      </ul>
+      <p class="copyright">
+        Copyrights © 2024 Geek Care. All Rights Reserved
+      </p>
+    </div>
+  </footer>
+
+  <div class="chat-box">
+    <div class="chat-icon">
+      <img src="images/speek-us.svg" alt="Support Agent" />
+      <div class="chat-status">
+      <div class="chat-status">Online</div>
+      <div class="notification-dot">1</div>
+    </div>
+  </div>
+  </div>
+ 
+
+</body>
+</html>

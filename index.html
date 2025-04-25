@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geek Cares - Tech Support & Repair Services</title>
+  <meta name="description" content="Book expert tech support and repair services at your doorstep. We service computers, printers, networks, and more with Geek Service Appointment.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      line-height: 1.6;
+      max-width: auto;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    header {
+      background-color: #1d60aa;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    header h2 {
+      font-size: 18px;
+    }
+    
+    header .buttons a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      border: 1px solid white;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    p.description {
+      text-align: center;
+      max-width: 800px;
+      margin: 10px auto;
+      font-size: 16px;
+      margin-top: 25px;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #1d60aa;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    header h2 {
+      font-size: 18px;
+    }
+
+    header .buttons a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      border: 1px solid white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      transition: background-color 0.3s;
+    }
+
+    header .buttons a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    main {
+      text-align: center;
+      padding: 20px 30px;
+      padding-top: auto;
+      font-weight: bold;
+      width: 100%;
+    }
+ 
+    .phone {
+      font-weight: bold;
+      font-size: larger;
+      height: auto;
+      color: #0754f9;
+      margin: 10px 0 30px;
+      margin-top: 27px;
+    }
+    
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px 20px;
+    }
+    
+    .card {
+      border: 2px solid #ccc;
+      padding: 15px 10px;
+      text-align: center;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-size: medium;
+      background-color: white;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+      object-fit: contain;
+    }
+   
+    .top-bar {
+  background-color: #1d60aa;
+  color: white;
+  font-size: bold;
+  padding: 30px 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+   gap: 350px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ask-expert {
+  float: left;
+  color: white;
+}
+
+.book-appointment {
+  float: right;
+  color: white;
+  
+}
+
+.top-bar::after {
+  content: inherit;
+  clear: both;
+  display: table;
+}
+
+    .login-page {
+      color: white;
+      text-decoration: none;
+      padding: 0px 10px;
+      transition: opacity 0.3s;
+    }
+
+    .login-page:hover {
+      opacity: 0.8;
+    }
+
+    .login-page-2 {
+      color: white;
+      text-decoration: none;
+      padding: 5px 15px;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .login-page-2:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .top-buttons button {
+      background-color: white;
+      color: #1d60aa;
+      border: none;
+      padding: 8px 12px;
+      margin-left: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #fff;
+      width: 100%;
+    }
+
+    .hero-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+
+    .hero-text h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #080808;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height:300px;
+      border-radius: 5px;
+    }
+
+    .hero-button {
+      margin-top: 20px;
+    }
+
+    .hero-button button {
+      background-color: #226891;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .hero-button button:hover {
+      background-color: #1a5276;
+    }
+
+    .service {
+      padding: 50px 20px;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      text-align: left;
+      
+    }
+
+    .service-text {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .service-text h3 {
+      color: #0e0f0f;
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 24px;
+    }
+
+    .service-text p {
+      color: #333;
+      font-size: 16px;
+      text-align: center;
+      padding-top: 10px;
+      line-height: 1.6;
+    }
+
+    .service-image img {
+      max-width: 100%;
+      height: 300px;
+      border-radius: 10px;
+    }
+
+    .testimonial-section {
+      background-color: #d8e2e7;
+      padding: 40px 20px;
+      font-weight: 400;
+      width: 100%;
+    }
+
+    .testimonial-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .testimonial {
+      display: none;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .testimonial.active {
+      display: block;
+    }
+
+    .testimonial-user {
+      text-align: center;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    .testimonial-user h2 {
+      margin-bottom: 20px;
+      color: #1d60aa;
+    }
+
+    .user-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      margin-bottom: 15px;
+      object-fit: cover;
+      background-color: #1d60aa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin: 0 auto 15px;
+    }
+
+    .testimonial-user h3{
+      color: black;
+      font-weight: bold;
+
+    }
+    .position {
+      font-size: 16px;
+      color:black;
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      margin: 15px 0;
+      color: #ffc107;
+      font-size: 20px;
+    }
+
+    .testimonial-text {
+      margin-top: 15px;
+      font-style: normal;
+      color: black;
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+
+    .card-container {
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+
+    .arrow {
+      font-size: 30px;
+      cursor: pointer;
+      padding: 10px;
+      user-select: none;
+      transition: transform 0.2s;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      color: #1d60aa;
+      margin: 0 15px;
+    }
+
+  
+
+    .testimonial-wrapper {
+      flex: 1;
+      padding: 0 20px;
+    }
+
+    .promo-section {
+      background-color: #1f6994;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .promo-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .promo-text {
+      max-width: 600px;
+      color: #ffc107;
+    }
+
+    .promo-text h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #ffc107;
+    }
+
+    .promo-text p {
+      font-size: 16px;
+      color: white;
+      line-height: 1.6;
+    }
+
+    .promo-button {
+      background-color: #ffc107;
+      color: #000;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      height: fit-content;
+    }
+
+    .promo-button:hover {
+      background-color: #e0a800;
+    }  
+
+   
+    .chat-box {
+      position: fixed;
+      bottom: 10px;
+      right: 1px;
+      width: 300px;
+      font-family: Arial, sans-serif;
+      padding: 30px;
+     
+    }
+     .chat-icon {
+      width: auto;
+      height: 100px;
+      border-radius:auto;
+      padding-bottom: 10px 20px;
+      border-radius: 8px;
+    }
+    .chat-status{
+      position: relative;
+      background-color: #f6f2f2;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      display: inline-block;
+      margin-top: 5px;
+      float:  right;
+    }
+
+    .notification-dot {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: red;
+      color: rgb(249, 246, 246);
+      border-radius: 60%;
+      font-size: 12px;
+      width: 15px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-wrapper {
+      margin-top: 10px;
+      padding-top: 10px;
+      width: 100%;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 30px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffc107;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+      }
+      
+      .service {
+        flex-direction: column;
+      }
+      
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .top-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+      }
+      
+      header .buttons {
+        margin-top: 15px;
+      }
+      
+      .arrow {
+        margin: 0 5px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .categories {
+        grid-template-columns: 1fr;
+      }
+      
+      .promo-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .chat-box {
+        width: 250px;
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <h2>Customer Service & Support</h2>
+    <div class="buttons">
+      <a href="login.html">Login</a>
+      <a href="bookAppointment.html">Book Appointment</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>Book Geek Service Appointment</h1>
+
+    <p class="description">We believe technology should work for everyone. That's why we offer a full range of Geek Service Appointment at your doorstep. Our tech & appliance services deliver results to keep you connected - from protection and setup to installation and expert support. We are Geek-Cares, providing on-demand doorstep service. Book your appointment for service now.</p>
+    
+    <p class="phone">For Quick Assistance: +1 (808) 767-6060</p>
+      
+    <div style="text-align: center; margin-top: 50px; margin-bottom: 50px; font-weight:bold; font-size: large;">    
+              Choose Product Category   
+    </div>
+
+    <div class="categories">
+      <div class="card">
+        <a class="card-container" href="email-help.html">
+        <img src="images/email-icon.png" alt="Email Help Icon">
+        <h4>Email Help</h4></a>
+        <p>Book appointment for email troubleshooting or setup.</p>
+      </div>
+      
+      <div class="card">
+        <a class="card-container" href="computer.html">
+        <img src="images/computer.jpeg" alt="Computer Icon">
+        <h4>Computers & Tablets</h4></a>
+        <p>Get expert help with your devices.</p>
+      </div>
+
+      <div class="card">
+        <a class="card-container" href="printer.html">
+        <img src="images/printers.png" alt="Printer Icon">
+        <h4>Printers</h4></a>
+        <p>Fix printer issues with expert support.</p>
+      </div>
+
+      <div class="card">
+        <a class="card-container" href="wifi.html">
+        <img src="images/wi-fi.jpeg" alt="WiFi Icon">
+        <h4>WiFi & Network</h4></a>
+        <p>Optimize your home or office network.</p>
+      </div>
+
+      
+      <div class="card">
+        <a class="card-container" href="Antivirus.html">
+        <img src="images/security.jpeg" alt="Security Icon">
+        <h4>Antivirus & Security</h4></a>
+        <p>Ensure your device security.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="top-bar">
+    <a href="bookAppointment.html" class="book-appointment">😊Book your appointment</a>
+    <a href="Ask-expert.html" class="ask-expert">👨‍💻Ask an Expert</a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h2>Fast repairs, right in your neighborhood<br>Geek Service Appointment</h2>
+        <p>Our experts can fix your tech needs & appliances easily. Make your online geek service appointment today and let us come to you for reliable service at your doorstep. Geek-cares.site our appliance repairs are just as simple and quick process.�</p>
+        <strong>call us for appointment</strong><br>
+        <p>Call us at booking appointment number and get your appointment book by our customer service helpdesk. Provide your address and issue, we will get in touch with in 5 to 1o minutes.�</p><br>
+        <p>select your cities, we can have your device working after one visit to your home. contact us for geek service, geek help, geek service appointment, geek support.</p>
+        <ul style="text-align: left; margin-top: 15px; list-style-type: none;">
+          <li>✔️ Thousands of local repair experts ready to help</li>
+          <li>✔️ Most repairs done in one day</li>
+        </ul>
+        <div class="hero-button">
+          <button>Book Your Appointment</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/fast repair.webp" alt="Tech Repair Professional">
+      </div>
+    </div>
+  </section>
+
+   <div class="top-bar">
+    <a href="bookAppointment.html" class="book-appointment">😊Book your appointment</a>
+    <a href="Ask-expert.html" class="ask-expert">👨‍💻Ask an Expert</a>
+  </div>
+
+  <section class="service">
+    <div class="service-text">
+      <h3>Geek Service Appointment</h3>
+      <p>Geek Care is a comprehensive <strong style="color:#bb1250;">Geek service appointment</strong>, tech and appliance service provider. Geek-cares.site caters to a wide range of electronic devices and appliances.</p>
+
+      <h4>We Provide Doorstep Geek Service</h4>
+      <p>Welcome to Geek-Cares, your go-to solution for all tech support and repair needs. If you're having trouble with your gadgets, software, or network, we've got you covered. With our Geek Service Appointment, you can easily schedule a time for our certified specialists to help you with troubleshooting, updates, and support. Whether it's device repairs or Geek service appointments, our experts are dedicated to delivering exceptional support. Schedule your Geek Service Appointment today and experience reliable, efficient tech care at your convenience.</p>
+    </div>
+    <div class="service-image">
+      <img src="images/geekcare.jpg" alt="Geek Care Service Professional">
+
+  </section>
+
+  <div class="testimonial-section">
+    <div class="testimonial-container">
+      <div class="arrow left-arrow" onclick="prevTestimonial()" aria-label="Previous testimonial">&#8592;</div>
+
+      <div class="testimonial-wrapper">
+        <div class="testimonial active">
+          <div class="testimonial-user">
+            <h2>Testimonials</h2>
+            <img src="images/DMICON.png" alt="user" class="user icon">
+            <h3>David Heller</h3>
+            <p class="position">Sr. Manager</p>
+            <p class="stars">⭐ ⭐ ⭐ ⭐ ⭐</p>
+          </div>
+          <p class="testimonial-text">"Geek Care saved the day when my refrigerator suddenly stopped cooling. Their technician arrived promptly, diagnosed a faulty compressor, and had it replaced in no time. Thanks to them, I didn't have to worry about spoiled groceries!"</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-user">
+            <h2>Testimonials</h2>
+            <img src="images/DMICON.png" alt="user" class="user icon">
+            <h3>Jennifer York</h3>
+            <p class="position">Real Estate</p>
+            <p class="stars">⭐ ⭐ ⭐ ⭐ ⭐</p>
+          </div>
+          <p class="testimonial-text">"I've relied on Geek Care for all my tech needs, from computer repair to smart home installation, and they've never disappointed. Their team is reliable, knowledgeable, and always goes the extra mile to ensure customer satisfaction. I wouldn't trust anyone else with my devices."</p>
+        </div>
+            
+        <div class="testimonial">
+          <div class="testimonial-user">
+            <h2>Testimonials</h2>
+            <img src="images/DMICON.png" alt="user" class="user icon">
+            <h3>Veronica Hannon</h3>
+            <p class="position">Store Manager</p>
+            <p class="stars">⭐ ⭐ ⭐ ⭐ ⭐</p>
+          </div>
+          <p class="testimonial-text">"When my WiFi signal was constantly dropping, I called Geek Care for help. Their team optimized my network setup, and now I enjoy seamless connectivity throughout my home. Thanks to them, streaming and gaming have never been smoother!"</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-user">
+            <h2>Testimonials</h2>
+            <img src="images/DMICON.png" alt="user" class="user icon">
+            <h3>Jennifer Austin</h3>
+            <p class="position">Management Finance</p>
+            <p class="stars">⭐ ⭐ ⭐ ⭐ ⭐</p>
+          </div>
+          <p class="testimonial-text">"I couldn't figure out why my printer kept jamming until I contacted Geek Care. Their technician not only fixed the issue but also took the time to explain what went wrong and how to prevent it in the future. Outstanding service!"</p>
+        </div>
+      </div>
+
+      <div class="arrow right-arrow" onclick="nextTestimonial()" aria-label="Next testimonial">&#8594;</div>
+    </div>
+  </div>
+    
+  <section class="promo-section">
+    <div class="promo-content">
+      <div class="promo-text">
+        <h2>Become a member and save money on today's service.</h2>
+        <p>Plus, get unlimited help with all your devices and 100+ included or discounted services.</p>
+      </div>
+      <button class="promo-button">Chat Now</button>
+    </div>
+  </section>
+
+  <div class="chat-box">
+    <div class="chat-icon">
+      <img src="images/speek-us.svg" alt="Chat with Support Agent">
+      <div class="chat-status"> Online
+        <div class="notification-dot">1</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-wrapper">
+    <footer>
+      <h3>Geek Care</h3>
+      <ul class="footer-links">
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="Terms & condition.html">Terms & Conditions</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+      </ul>
+      <p class="copyright">
+        Copyrights © 2024 Geek Care. All Rights Reserved
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+
+    function showTestimonial(index) {
+      testimonials.forEach((item, i) => {
+        item.classList.remove('active');
+      });
+      testimonials[index].classList.add('active');
+    }
+
+    function nextTestimonial() {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      showTestimonial(currentIndex);
+    }
+
+    function prevTestimonial() {
+      currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(currentIndex);
+    }
+
+    // Auto-rotate testimonials every 5 seconds
+    setInterval(nextTestimonial, 5000);
+  </script>
+</body>
+</html>

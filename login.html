@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Geek Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #1d60aa;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    header h2 {
+      font-size: 18px;
+      color: white;
+    }
+    
+    header .buttons a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      border: 1px solid white;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 30px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+    }
+
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #ffc107;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 20px;
+    }
+
+    /* Main content styling */
+    .login-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      width: 20%;
+      max-width: 350px;
+      margin: 100px auto;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .login-box:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 90%;
+      padding: 14px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #1d60aa; /* was #00796b */
+      box-shadow: 0 0 0 3px rgba(56, 163, 165, 0.2); /* updated */
+      outline: none;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 14px;
+      background-color: #1d60aa; /* was #00796b */
+      color: #fff;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-login:hover {
+      background-color: #2c7d7e; /* was #004d40 */
+    }
+
+    .error {
+      margin-top: 15px;
+      color: #e74c3c;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h2>Customer Service & Support</h2>
+    <div class="buttons">
+      <a href="login.html">Login</a>
+      <a href="bookAppointment.html">Book Appointment</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="login-box">
+    <form id="loginForm">
+      <h2>Login</h2>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required placeholder="Enter your email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required placeholder="Enter your password" />
+      </div>
+
+      <button type="submit" class="btn-login">Login</button>
+      <div id="error-message"></div>
+    </form>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <h3>Geek Care</h3>
+    <ul class="footer-links">
+      <li><a href="about-us.html">About us</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+      <li><a href="refund-policy.html">Refund Policy</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+    <div class="copyright">
+      Copyrights © 2024 Geek Care. All Rights Reserved
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+  
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorMessageDiv = document.getElementById('error-message');
+  
+      console.log("Form submitted. Email:", email, "Password:", password); // Debugging: Check input values
+  
+      try {
+        const res = await fetch('http://localhost:8000/login.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        console.log("Response status:", res.status); // Debugging: Check the response status
+        console.log("Response headers:", res.headers); // Debugging: Check the response headers
+
+        // Log the raw response text before parsing
+        const rawResponse = await res.text();
+        console.log("Raw response:", rawResponse); // Debugging: Log the raw response
+
+        // Try parsing the response only if it's JSON
+        try {
+          const data = JSON.parse(rawResponse);
+          console.log("Response data:", data); // Debugging: Check the response data
+  
+          if (data.error) {
+            errorMessageDiv.textContent = data.error;
+            errorMessageDiv.style.color = 'red';
+            console.log("Error message:", data.error); // Debugging: Check error message
+          } else {
+            console.log("Registration successful. Redirecting to address.html...");
+            // Redirect to address.html after successful registration
+            window.location.href = 'address.html';
+          }
+        } catch (jsonError) {
+          console.error("Failed to parse JSON:", jsonError);
+          errorMessageDiv.textContent = 'Failed to process the response. Please try again later.';
+          errorMessageDiv.style.color = 'red';
+        }
+      } catch (error) {
+        errorMessageDiv.textContent = 'An error occurred. Please try again later.';
+        errorMessageDiv.style.color = 'red';
+        console.log("Fetch error:", error); // Debugging: Log fetch error
+      }
+    });
+  </script>
+
+</body>
+</html>
